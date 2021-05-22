@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>photo opacity</title>
+  <style>
+    img{
+      opacity: 0.4;
+      padding: 6px;
+      margin: 0px 10px;
+      filter:alpha(opacity=40);    /* 适用 IE8 及其更早版本 */
+    }
+    img:hover{
+      opacity: 1;
+      filter:alpha(opacity=100);    /* 适用 IE8 及其更早版本 */
+    }
+
+    div.background{
+      background: url("Html+CSS_Demo/img_forest.jpeg") repeat;
+      width: 500px;
+      height: 250px;
+      border:2px solid black;
+
+    }
+    div.transbox{
+      width: 400px;
+      height: 180px;
+      margin: 30px 50px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      opacity: 0.6;
+      filter:alpha(opacity=60);   /* IE8 及更早版本 */
+      overflow: auto;
+    }
+    div.transbox p{
+      margin: 30px 40px;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>图片透明度</h1>
+  <p>opacity 属性通常与 :hover 选择器一起使用，在鼠标移动到图片上后改变图片的透明度：</p>
+  <img src="img_forest.jpeg" alt="forest" width="150" height="113" />
+  <img src="img_mountains.jpeg" alt="mountains" width="150" height="113" />
+  <p><b>注意:</b>在 IE 中必须声明 &lt;!DOCTYPE&gt; 才能保证 :hover 选择器能够有效。</p>
+
+  <hr>
+  <div class="background">
+    <div class="transbox">
+      <p>这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。</p>
+    </div>
+  </div>
+</body>
+</html>

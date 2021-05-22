@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js grammar</title>
+</head>
+<body>
+  <!--JavaScript 字面量-->
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+  <!--JavaScript 变量-->
+  <p id="demo3"></p>
+  <!--JavaScript 操作符-->
+  <p id="demo4"></p>
+  <p id="demo5"></p>
+
+  <p>点击这里来创建变量，并显示结果。</p>
+  <button type="button" onclick="mycreat()">点击这里</button>
+  <p id="demo6"></p>
+  <p id="demo7">s</p>
+  <script>
+    document.getElementById("demo").innerHTML="3.14";       //数字（Number）字面量
+    document.getElementById("demo1").innerHTML='John';      //字符串（String）字面量 可以使用单引号或双引号
+    document.getElementById("demo2").innerHTML=5 * 10;      //表达式字面量 用于计算
+
+    //JavaScript 使用关键字 var 来定义变量， 使用等号来为变量赋值
+    var length;
+    length = 6;
+
+    document.getElementById("demo3").innerHTML= typeof (length);  //通过 typeOf() 来获取JavaScript中变量的数据类型.
+
+    //JavaScript使用赋值运算符给变量赋值：
+    var x,y,z;
+    x=5;
+    y=6;
+    z=(x+y)*10;
+    document.getElementById("demo4").innerHTML=z;
+
+    //
+    document.getElementById("demo5").innerHTML=16 + "volvo";
+
+    //应用注释符号验证浏览器是否支持 JavaScript 脚本功能
+   // <!--
+    //document.write("你的浏览器支持JavaScript脚本！");
+    //-->   //注释行结尾处的两条斜杠 // 是 JavaScript 注释符号。这可以避免 JavaScript 执行 --> 标签。
+
+    //声明（创建） JavaScript 变量
+    function mycreat(){
+      var carname = "Volvo";
+      document.getElementById("demo6").innerHTML = carname;
+    }
+
+    //变量与函数重名的时候，变量生效
+    /* var a = 100;
+    function a(){
+      return "function";
+    }
+    console.log(a);     //输出 100
+    console.log(a()); */
+    /*
+    报错
+    Uncaught TypeError: a is not a function
+          (anonymous function) @test.html:9
+    */
+    //JS 中有两种函数，一种是普通函数，一种是函数对象。下面的这种就是“函数对象”，它实际上是声明一个匿名函数，然后将该函数的 init 方法赋值给该变量。
+    var a = 100;
+    var a = function (){
+      return "function";
+    }
+    console.log(a);
+    console.log(a())
+
+    //极大或极小的数字可以通过科学（指数）计数法来书写
+    var z = 123e5;
+    document.getElementById("demo7").innerHTML = z;
+
+    //JavaScript 数组
+    var i;
+    var cars = new Array();
+    cars[0] = "Saab";
+    cars[1] = "Volvo";
+    cars[2] = "BMW";
+    for(i=0;i<cars.length;i++){
+      document.write(cars[i] + "<br>");
+    }
+
+    //对象属性有两种寻址方式：
+    var person={
+      firstname : "John",
+      lastname  : "Doe",
+      id        : 5566
+    };
+    document.write(person.lastname + "<br>");
+    document.write(person["lastname"] + "<br>");
+
+    //最常用的对象创建方式,第一种
+    function Demo(){
+      var obj = new Object();
+      obj.name = "张思";
+      obj.age=12;
+      obj.firstF=function (){
+      };
+      obj.secondF = function (){};
+      return obj;
+    }
+
+    var one = Demo();
+    document.write(one.age+"<br>");
+
+    //最常用的对象创建方式,第二种
+    function Demo1(){
+      this.name = "blue";
+      this.age = 24;
+      this.firstF = function (){
+      };
+      this.secondF = function (){};
+    }
+
+    var one1 = new Demo1;
+    document.write(one1.name + "<br>");
+
+    var str = "123.30";
+    var a = parseInt(str);
+    var b = parseFloat(str);
+    var c = !! str;
+    document.write(a + "<br>");
+    document.write(b+"<br>");
+    document.write(c + "<br>");
+  </script>
+</body>
+</html>
