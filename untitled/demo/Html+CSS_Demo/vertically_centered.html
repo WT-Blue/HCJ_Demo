@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vertically_centered</title>
+    <style>
+      .padding{
+        border: 3px solid green;
+        padding:70px 0px;
+        text-align:center;
+      }
+      .center{
+        border:3px solid green;
+        line-height: 200px;
+        height: 200px;
+        text-align: center;
+      }
+      /* 如果文本有多行，添加以下代码: */
+      .center p{
+        line-height: 1.5;
+        display: inline-block;
+        /*多行文本可使用 vertical-align: middle; 来实现元素的垂直居中，但是如果子元素的内容体积大于父元素的内容体积时，仍然会溢出，后面需要使用文字溢出处理来解决。*/
+        vertical-align:middle;
+      }
+      .center1{
+        border:3px solid green;
+        position: relative;
+        height: 200px;
+      }
+      .center1 p{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+      }
+    </style>
+</head>
+<body>
+  <h2>垂直居中</h2>
+  <p>以上实例，我们使用 padding 属性实现元素的垂直居中：</p>
+
+  <div class="padding">
+    我是垂直居中
+  </div>
+
+  <hr>
+  <h2>居中</h2>
+  <p>以下实例中，我们让 line-height 属性值和 height 属性值相等来设置 div 元素居中：</p>
+  <div class="center">
+    <p>我是垂直居中的。</p>
+    <p>我是垂直居中的。</p>
+    <p>我是垂直居中的。</p>
+    <p>我是垂直居中的。</p>
+  </div>
+
+  <hr>
+  <h2>居中</h2>
+  <p>以下实例中，我们使用了 positioning 和 transform 属性来设置水平和垂直居中：</p>
+  <div class="center1">
+    <p>我是垂直居中的。</p>
+  </div>
+  <p>注意: IE8 及更早版本不支持 transform 属性。</p>
+</body>
+</html>

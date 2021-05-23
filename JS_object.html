@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS obiect</title>
+</head>
+<body>
+  <p>创建 JavaScript 对象。</p>
+  <p id="demo"></p>
+
+  <hr>
+  <p>创建和使用对象方法。</p>
+  <p>对象方法作为一个函数定义存储在对象属性中。</p>
+  <p id="demo1"></p>
+  <script>
+    //使用字符来定义和创建 JavaScript 对象
+    var person = {
+      firstName:"John",
+      lastName :"Doe",
+      age : 50,
+      eyeColor : "blue"
+    };
+    document.getElementById("demo").innerHTML =
+            person.firstName + "现在" + person.age + "岁。";
+
+    //对象的方法定义了一个函数，并作为对象的属性存储。该实例访问了 person 对象的 fullName() 方法:
+    var person = {
+      firstName : "John",
+      lastName :"Doe",
+      id : 5566,
+      fullName : function (){
+        return this.firstName + " " + this.lastName;
+      }
+    };
+    document.getElementById("demo1").innerHTML = person.fullName();
+  </script>
+</body>
+</html>

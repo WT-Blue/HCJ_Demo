@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tooltip</title>
+    <style>
+      /* Tooltip 容器 */
+      .tooltip{
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+      }
+      /* Tooltip 文本 */
+      .tooltiptext{
+        visibility: hidden;
+        width: 120px;
+        padding:5px 0px;
+        background-color: black;
+        color: white;
+        border-radius: 6px;
+
+        /* 定位 显示在右侧*/
+        /*position: absolute;
+        z-index: 1;
+        top:-5px;
+        left: 105%;*/
+        /* 定位 显示在左侧*/
+        /*position: absolute;
+        z-index: 1;
+        top:-5px;
+        right: 105%;*/
+        /* 定位 显示在底部*/
+        /*position:absolute;
+        top:100%;
+        left: 50%;
+        margin-left: -60px; */ /* 使用一半宽度 (120/2 = 60) 来居中提示工具 */
+          /* 定位 显示在顶部*/
+          position: absolute;
+          bottom: 100%;
+          left:50%;
+          margin-left:-60px;
+
+          /*淡入 - 1秒内从 0% 到 100% 显示:*/
+          opacity: 0;
+          transition:opacity 1s;
+      }
+      /*为显示在顶部的提示工具添加底部箭头*/
+      /*.tooltip .tooltiptext::after{
+        content: "";
+        position: absolute;
+        top:100%;
+        left:50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+      }*/
+
+      /*为显示在底部的提示工具添加底部箭头*/
+      /*.tooltip .tooltiptext::after{
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+      }*/
+      /*左侧提示框/右侧箭头：*/
+      /*.tooltip .tooltiptext::after{
+        content: "";
+        position: absolute;
+        top:50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent black;
+      }*/
+      /*右侧提示框/左侧箭头：*/
+      /*.tooltip .tooltiptext::after{
+          content: "";
+          position: absolute;
+          top:50%;
+          right: 100%;
+          margin-top: -5px;
+          border-width:5px;
+          border-style:solid;
+          border-color:transparent black transparent transparent;
+      }*/
+      /* 鼠标移动上去后显示提示框 */
+      .tooltip:hover .tooltiptext{
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+</head>
+<body style="text-align: center">
+  <h2>头部提示工具</h2>
+  <p>鼠标移动到以下元素:</p>
+  <div class="tooltip">鼠标移动到这
+    <span class="tooltiptext">提示文本</span>
+  </div>
+</body>
+</html>
