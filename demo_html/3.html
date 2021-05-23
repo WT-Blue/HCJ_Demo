@@ -1,0 +1,263 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>blue3</title>
+    </head>
+    <body>
+        <p>
+            每个表格从一个 table 标签开始。 
+            每个表格行从 tr 标签开始。
+            每个表格的数据从 td 标签开始。
+        </p>
+        <h4>一列：</h4>
+        <table border="1">
+            <tr>
+                <td>100</td>
+            </tr>
+        </table>
+
+        <h4>一行三列：</h4>
+        <table border="1">
+            <tr>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+            </tr>
+        </table>
+
+        <h4>两行三列：</h4>
+        <table border="1">
+            <tr>
+                <td>100</td>
+                <td>200</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>500</td>
+                <td>600</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <table border="1">
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+            <tr>
+                <td>row 1,cell 1</td>
+                <td>row 1,cell 2</td>
+            </tr>
+            <tr>
+                <td>row 2,cell 1</td>
+                <td>row 2,cell 2</td>
+            </tr>
+        </table>
+
+        <hr>
+        <!--表格中的表头-->
+        <h4>水平标题</h4>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Telephone</th>
+                <th>Telephone</th>
+            </tr>
+            <tr>
+                <td>Bliee Gates</td>
+                <td>555 77 854</td>
+                <td>555 77 855</td>
+            </tr>
+        </table>
+
+        <h4>垂直标题</h4>
+        <table border="1">
+            <tr>
+                <th>First Name:</th>
+                <td>Bill Gates</td>
+            </tr>
+            <tr>
+                <th>Telephone:</th>
+                <td>555 77 854</td>
+            </tr>
+            <tr>
+                <th>Telephone:</th>
+                <td>555 77 855</td>
+            </tr>
+        </table>
+
+        <hr>
+        <!--带有标题的表格-->
+        <table border="1">
+            <caption>Monthly savings</caption>
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>$50</td>
+            </tr>
+        </table>
+
+        <hr>
+        <!--跨行或跨列的表格单元格-->
+        <h4>单元格跨两列</h4>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th colspan="2">Telephone</th>
+            </tr>
+            <tr>
+                <td>Bill Gates</td>
+                <td>555 77 854</td>
+                <td>555 77 855</td>
+            </tr>
+        </table>
+
+        <h4>单元格跨两行</h4>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <td>Bill Gates</td>
+            </tr>
+            <tr> 
+                <th rowspan="2">Telephone</th>
+                <td>555 77 854</td>
+            </tr>
+            <tr>
+                <td>555 77 854</td>
+            </tr>
+        </table>
+
+        <hr>
+        <!--表格内的标签-->
+        <table border="1">
+            <tr>
+                <td>
+                    <p>这是一个段落</p>
+                    <p>这是另一个段落</p>
+                </td>
+                <td>
+                    这个单元格包含一个表格：
+                    <table border="1">
+                        <tr>
+                            <td>A</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>D</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+               <td>
+                   这个单元格包含一个列表
+                   <ul>
+                       <li>apples</li>
+                       <li>bananas</li>
+                       <li>pineapples</li>
+                   </ul>
+               </td> 
+               <td>HELLO</td>
+            </tr>
+        </table>
+
+        <hr>
+        <!--单元格边距cellpadding-->
+        <h4>没有单元格边距</h4>
+        <table border="1">
+            <tr>
+                <td>First</td>
+                <td>Row</td>
+            </tr>
+            <tr>
+                <td>Second</td>
+                <td>Row</td>
+            </tr>
+        </table>
+
+        <h4>有单元格边距</h4>
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>First</td>
+                <td>Row</td>
+            </tr>
+            <tr>
+                <td>Second</td>
+                <td>Row</td>
+            </tr>
+        </table>
+
+        <hr>
+        <!--单元格间距cellspacing-->
+        <h4>没有单元格间距</h4>
+        <table border="1">
+            <tr>
+                <td>First</td>
+                <td>Row</td>
+            </tr>
+            <tr>
+                <td>Second</td>
+                <td>Row</td>
+            </tr>
+        </table>
+
+        <h4>单元格间距=“0”</h4>
+        <table border="1" cellspacing="0">
+            <tr>
+                <td>First</td>
+                <td>Row</td>
+            </tr>
+            <tr>
+                <td>Second</td>
+                <td>Row</td>
+            </tr>
+        </table>
+
+        <h4>单元格间距=“10”</h4>
+        <table border="1" cellspacing="10">
+            <tr>
+                <td>First</td>
+                <td>Row</td>
+            </tr>
+            <tr>
+                <td>Second</td>
+                <td>Row</td>
+            </tr>
+        </table>
+
+        <hr>
+        <!--colgroup标签-->
+        <table border="1">
+            <colgroup>
+                <col span="2" style="background-color: red;">
+                <col style="background-color: yellow;">
+            </colgroup>
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>3476896</td>
+                <td>My first HTML</td>
+                <td>$53</td>
+            </tr>
+            <tr>
+                <td>5789678</td>
+                <td>My first CSS</td>
+                <td>$59</td>
+            </tr>
+        </table>
+    </body>
+</html>

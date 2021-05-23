@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>responsive_navigation_bar</title>
+        <style>
+            ul.topnav{
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                background-color: #333;
+                overflow: hidden;
+            }
+            ul.topnav li{
+                float: left;
+            }
+            ul.topnav li a{
+                display: block;
+                padding:16px;
+                color: white;
+                text-decoration: none;
+                text-align: center;
+            }
+            ul.topnav li a:hover:not(.active){
+                background-color:black ;
+            }
+            ul.topnav li a.active{
+                background-color:#4CAF50;
+            }
+            ul.topnav li.right{
+                float:right;
+            }
+            @media screen and (max-width:600px){
+                ul.topnav li.right,
+                ul.topnav li{ float:none; }
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="topnav">
+            <li><a class="active" href="#home">主页</a></li>
+            <li><a href="#news">新闻</a></li>
+            <li><a href="#contact">联系</a></li>
+            <li class="right"><a href="#about">关于</a></li>
+        </ul>
+        
+        <div>
+            <h2>响应式导航栏实例</h2>
+            <p>在屏幕宽度小于 600px 会重置导航栏。</p>
+            <h4>重置浏览器窗口大小，查看效果。</h4>
+        </div>
+    </body>
+</html>

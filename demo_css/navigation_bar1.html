@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>navigation bar1</title>
+        <style>
+
+            body{
+                margin:0;
+            }
+            .leftmenu{
+                position: fixed;
+                height: 100%;
+                width: 100px;
+                background-color: #f1f1f1;
+                overflow: auto;
+            }
+            .leftmenu ul{
+                list-style-type: none;
+                margin:0;
+                padding:0;
+                
+            }
+            .leftmenu a{
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                padding:8px;
+                color:black;
+            }
+            .leftmenu a.active{
+                background-color: #4CAF50;
+                color:white;
+            }
+            .leftmenu a:hover:not(.active){
+                background-color:#555;
+                color: white;
+            }
+            .rightcontent{
+                margin-left: 25%;
+                padding:1px 16px;
+                height: 1000px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="leftmenu">
+            <ul>
+                <li><a href="#main" class="active">主页</a></li>
+                <li><a href="#new">新闻</a></li>
+                <li><a href="#contact">联系</a></li>
+                <li><a href="#about">关于</a></li>
+            </ul>
+        </div>
+        <div class="rightcontent">
+            <h1>Fixed Full-height Side Nav</h1>
+            <h2>Try to scroll this area, and see how the sidenav sticks to the page</h2>
+            <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
+            <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+        </div>
+    </body>
+</html>

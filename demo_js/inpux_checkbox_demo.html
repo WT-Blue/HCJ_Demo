@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>input checkbox 全选与取消全选</title>
+    </head>
+    <body>
+        看书：<input type="checkbox" name="checkbox" value="1"><br/>
+        写字：<input type="checkbox" name="checkbox" value="2"><br/>
+        打飞机：<input type="checkbox" name="checkbox" value="3"><br/>
+        玩游戏：<input type="checkbox" name="checkbox" value="4"><br/>
+        <button type="button" onclick="checkboxed('checkbox')">全选</button>
+        <button type="button" onclick="checkboxed('uncheckbox')">取消全选</button>
+    </body>
+
+    <script>
+        function checkboxed(type){
+            var checkFlag = true;
+            var inputs = document.getElementsByName('checkbox');
+            if(type == 'uncheckbox'){
+               checkFlag = false;
+            }
+            for(var i = 0;i<inputs.length;i++){
+                inputs[i].checked = checkFlag;
+            }
+        }
+    </script>
+</html>

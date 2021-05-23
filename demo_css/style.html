@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            p{
+                color: red;
+                text-align:center;
+            }
+            /*id选择器*/
+            #paral
+            {
+                text-align: center;
+                color:blue;
+            }
+            /*class选择器*/
+            .center{
+                text-align: center;
+            }
+            /*指定HTML元素使用class*/
+            p.center1{
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <p>Hellow World!</p>
+        <p>这个段落采用css样式</p>
+
+        <hr>
+        <!--id选择器-->
+        <p id="paral">Hello World</p>
+
+        <hr>
+        <!--class选择器-->
+        <h1 class="center">标题居中</h1>
+        <p class="center">段落居中</p>
+
+        <hr>
+        <!--指定HTML元素使用class-->
+        <h1 class="center1">这个标题不受影响</h1>
+        <p class="center1">段落居中</p>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>html_output</title>
+    </head>
+    <body>
+        <p>JavaScript 能够直接写入 HTML 输出流中：</p>
+        <script src="demojs.js"></script>
+        <p>您只能在 HTML 输出流中使用 <strong>document.write</strong>。如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。</p>
+        <button type="button" onclick="test()">点击这里</button>
+        
+        <hr>
+        <h1>我的第一个JavaScript</h1>
+        <p>JavaScript 能够对事件作出反应。比如对按钮的点击：</p>
+        <button type="button" onclick="alert('欢迎')">点我！</button>
+        
+        <hr>
+        <h1>我的第一段JavaScript</h1>
+        <p id="demo">
+            JavaScript 能改变 HTML 元素的内容。
+        </p>
+        <script src="hello.js"> </script>
+        <button type="button" onclick="myFunction()">点击这里</button>
+        
+        <hr>
+        <script>
+            function changeImage(){
+                element = document.getElementById('myimage')
+                if(element.src.match("bulbon")){
+                    element.src="pic_bulboff.gif";
+                }
+                else{
+                    element.src="pic_bulbon.gif";
+                }
+            }
+        </script>
+        <img id="myimage" onclick="changeImage()" src="pic_bulboff.gif" width="100" height="180" />
+        <p>点击灯泡就可以打开或关闭这盏灯</p>
+
+        <hr>
+        <h1>我的第一段 JavaScript</h1>
+        <p id="red">JavaScript 能改变 HTML 元素的样式。</p>
+        <button type="button" onclick="changetext()">点击这里</button>
+        
+        <script>
+            function changetext(){
+                x=document.getElementById('red');   //找到元素
+                x.style.color="red";                //改变样式
+            }
+        </script>
+
+        <hr>
+        <h1>我的第一段 JavaScript</h1>
+        <p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+        <input type="text" id="text">
+        <button type="button" onclick="myCheck()">点击这里</button>
+        
+        <script>
+            function myCheck(){
+                var x=document.getElementById("text").value;
+                if(x==""||isNaN(x)){
+                    alert("不是数字");
+                }
+            }
+        </script>
+    </body>
+</html>

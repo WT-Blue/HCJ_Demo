@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>display_visibility</title>
+    </head>
+    <style>
+        li{display: inline;}       /*列表项显示为内联元素*/
+        span{display: block;}       /*把span元素作为块元素*/
+        p.p1{display:inline;}
+        table{border-collapse: collapse;}
+        table,th,td{
+            border:1px solid black;
+        }
+        tr.hidden{
+            visibility: hidden;   /*使元素在网页上不可见，但仍占用空间。*/
+        }
+        /*一般的元素的表现与 visibility: hidden 一样，也即其会占用空间。但如果该元素是与 table 相关的元素，例如 table row、table column、table column group 等，其表现却跟 display: none 一样，也即其占用的空间会释放。*/
+        tr.collapse{
+            visibility: collapse;  
+        }
+        tr.display{
+            display: none;     /*元素不再占用空间*/
+        }
+    </style>
+    <body>
+        <p>链接列表水平显示</p>
+
+        <ul>
+            <li><a href="/html/" target="_blank">HTML</a></li>
+            <li><a href="/css/" target="_blank">CSS</a></li>
+            <li><a href="/js/" target="_blank">JavaScript</a></li>
+            <li><a href="/xml/" target="_blank">XML</a></li>
+        </ul>
+
+        <hr>
+        <h2>Nirvana</h2>
+        <span>Record: MTV Unplugged in New York</span>
+        <span>Year: 1993</span>
+        <h2>Radiohead</h2>
+        <span>Record: OK Computer</span>
+        <span>Year: 1997</span> 
+
+        <hr>
+        <!--显示一个元素的内联元素-->
+        <p class="p1">display 属性的值为 "inline"的结果</p>
+        <p class="p1">两个元素显示在同一水平线上。</p>
+
+        <hr>
+        <!--使用表的collapse属性-->
+        <table>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+              </tr>
+              <tr class="hidden">
+                <td>Hjes</td>
+                <td>Fjfdlb</td>
+              </tr>
+              <tr class="collapse">
+                <td>Lois</td>
+                <td>Griffin</td>
+              </tr>
+              <tr class="display">
+                <td>Tomy</td>
+                <td>Griffin</td>
+              </tr>
+        </table>
+    </body>
+</html>

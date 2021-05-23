@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS比较</title> 
+    </head>
+    <body>
+        <p>点击按钮检测年龄</p>
+        <form>
+            年龄：<input type="text" id="text" />
+        </form>
+        <p>是否达到投票年龄？</p>
+        <button type="button" onclick="detaction_age()">点击按钮</button>
+        <p id="demo"></p>
+
+        <p>如果时间早与20：00,会获得问候"Good day"，反之"good evening"</p>
+        <button type="button" onclick="detaction_time()">点击这里</button>
+        <p id="demo1"></p>
+
+        <hr>
+        <p>点击下面的按钮，循环遍历对象 "person" 的属性。</p>
+        <button type="button" onclick="forin()">点击这里</button>
+        <p id="demo2"></p>
+
+        <script>
+           function detaction_age(){
+                var age = document.getElementById('text').value;
+                var result = (age<18)?"年龄太小":"年龄已达标";
+                document.getElementById('demo').innerHTML = result;
+            }
+
+            function detaction_time(){
+                var time = new Date().getHours();
+                var x = "good day";
+                if(time>20){
+                    x = "good evening";
+                }
+                document.getElementById('demo1').innerHTML = x;
+            }
+
+            //优化if的方法
+            const condition = 2;
+            let obj = {
+                '1' : () => {document.write(1)},
+                '2' : () => {document.write(2)},
+                '3' : () => {document.write(3)},
+            }
+            obj[condition]();
+
+            //switch语句
+            var d = new Date().getDay(),x;
+            switch(d){
+                case 0:x="今天是星期日<br/>";
+                break;
+                case 1:x="今天是星期一";
+                break;
+                case 2:x="今天是星期二";
+                break;
+                case 3:x="今天是星期三";
+                break;
+                case 4:x="今天是星期四";
+                break;
+                case 5:x="今天是星期五";
+                break;
+                case 6:x="今天是星期六";
+                break;
+                default:
+                    x = "期待周末";
+            }
+            document.write("<br/>" +　x);
+
+            //for循环
+            var cars = ["BMW","Volvo","Saab","Ford"];
+            for(let i = 0;i<cars.length;i++){
+                document.write(cars[i] +　"<br/>");
+            }
+
+            for(var i= 0; i<5;i++){
+                x = x+"该数字为 " + i + "<br/>";
+                document.write(x);
+            }
+
+            //For/In 循环
+            function forin(){
+                var x,text="";
+                var person = {fname:"Bill",lname:"Gates",age:56};
+                for(x in person){
+                    text = text + person[x];
+                }
+                document.getElementById('demo2').innerHTML = text;
+            }
+            
+            //有了标签，可以使用break和continue在多层循环的时候控制外层循环。
+            outerloop:
+            for (var i = 0; i < 10; i++)
+            {
+                innerloop:
+                for (var j = 0; j < 10; j++)
+                {
+                    if (j > 3)
+                    {
+                        break;
+                    }
+                    if (i == 2)
+                    {
+                        break innerloop;
+                    }
+                    if (i == 4)
+                    {
+                        break outerloop;
+                    }
+                    document.write("i=" + i + " j=" + j + "" + "<br/>");
+    }
+}
+        </script>
+    </body>
+</html>

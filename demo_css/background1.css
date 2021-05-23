@@ -1,0 +1,11 @@
+body{
+    /*background-image:url("D:/demo/pink_tree.png");
+    background-repeat:no-repeat;
+    background-position: right top;
+    margin-right: 200px;*/
+
+    background:#ffffff url("D:/demo/images/pink_tree.png") no-repeat right top;
+    margin-right: 200px;
+
+
+}

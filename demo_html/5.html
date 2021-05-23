@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>blur5</title>
+    </head>
+    <body>
+        <p style="background-color:#FFFF00">通过十六进制设置背景颜色</p>
+
+        <p style="background-color:rgb(255,255,0)">通过rgb值设置背景颜</p>
+
+        <p style="background-color: yellow;">通过颜色名设置背景颜</p>
+
+        <hr>
+        <!--rgb运行对颜色值设置透明度-->
+
+        <p style="background-color:rgb(255,255,0)">通过rgb值设置背景颜</p>
+
+        <p style="background-color:rgb(255,255,0,0.25)">通过rgb值设置背景颜</p>
+
+        <p style="background-color:rgb(255,255,0,0.5)">通过rgb值设置背景颜</p>
+
+        <p style="background-color:rgb(255,255,0,0.75)">通过rgb值设置背景颜</p>
+
+        <hr>
+        <!--插入一段脚本-->
+        <script>
+            document.write("Hello world!")
+        </script>
+
+        <hr>
+        <!--使用noscript标签应对不支持脚本或禁用脚本的浏览器-->
+        <script>
+            document.write("Hello world!")
+        </script>
+        <noscript>抱歉，你的浏览器不支持JavaScript!</noscript>
+        
+        <p>不支持JavaScript的浏览器会使用&lt;noscript&gt;元素中定义的内容（文本）来代替。</p>
+
+        <hr>
+        <!--JavaScript可以直接在HTML输出-->
+        <p>Javascript能够直接写入HTML输出流中：</p>
+        <script>
+            document.write("<h1>这是一个标题</h1>");
+            document.write("<p>这是一个段落。</p>")
+        </script>
+
+        <p>
+            您只能在 HTML 输出流中使用 document.write。 如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+        </p>
+
+        <hr>
+        <!--JavaScript事件响应-->
+        <h1>我的第一个JavaScript</h1>
+        <p id="demo">JavaScript可以触发事件，就像按钮点击。</p>
+        
+        <script>
+            function myFunction(){
+                document.getElementById("demo").innerHTML="Hello JavaScript!";
+            }
+        </script>
+
+        <button type="button" onclick="myFunction()">点我</button>
+
+        <hr>
+        <!--JavaScript处理 HTML 样式-->
+        <h1>我的第一段JavaScript</h1>
+        <p id="demo1">JavaScript能改变HTML元素的样式。</p>
+
+        <script>
+            function myFunction1(){
+                x=document.getElementById("demo1");  //找到元素
+                x.style.color="#ff0000";   //改变样式
+            }
+        </script>
+
+        <button type="button" onclick="myFunction1()">点击这里</button>
+    </body>
+</html>

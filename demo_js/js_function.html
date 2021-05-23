@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>js function</title>
+    </head>
+    <body>
+        <p>点击这个按钮，来调用带参数的函数。</p>
+        <button type="button" onclick="myfunction('Harry Potter','Wizard')">点击这里</button>
+        <button type="button" onclick="myfunction('Bob','Bulider')">点击这里</button>
+        <hr>
+        <p>本例调用的函数会执行一个计算，然后返回结果：</p>
+        <p id="demo"></p>
+        <script>
+            function myfunction(name,job){
+                alert("Welcome " + name + ", the " + job);
+            }
+            function myfunction1(a,b){
+                return a*b;
+            }
+            document.getElementById("demo").innerHTML = myfunction1(4,3);
+
+            //
+            var a = [];
+            for (let i = 0; i < 10; i++) {
+                a[i] = function () {
+                   return i;
+                };
+            }
+            document.write(a[6]()); 
+
+            //for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。
+            for (let i = 0; i < 3; i++) {
+                
+                let i = 'abc';
+                document.write(i);
+            }
+            
+        </script>
+    </body>
+</html>

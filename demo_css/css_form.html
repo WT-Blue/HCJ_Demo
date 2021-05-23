@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css_form</title>
+        <style>
+            div.div_form{
+                background-color: #f2f2f2;
+                border-radius: 5px;
+                padding: 20px;
+            }
+            input[type=text],select{
+                display: inline-block;
+                margin: 8px 0px;
+                width:100%;
+                border:1px solid #ccc;
+                border-radius: 4px;
+                padding: 12px 20px;
+                /*设置了 box-sizing 属性为 border-box。这样可以确保浏览器呈现出带有指定宽度和高度的输入框是把边框和内边距一起计算进去的。*/
+                box-sizing: border-box;    
+                /*默认情况下，一些浏览器在输入框获取焦点时（点击输入框）会有一个蓝色轮廓。我们可以设置 input 样式为 outline: none; 来忽略该效果。*/
+                outline: none;
+                /*使用来 CSS transition 属性来设置边框当颜色 (在 0.5 秒内修改边框当颜色)。*/
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+            }
+             /*使用 :focus 选择器可以设置输入框在获取焦点时的样式：*/
+            /*input[type=text]:focus{
+                background-color: lightblue;  
+            }*/
+            /*使用 :focus 选择器，在文本框获取焦点时，设置文本框当边框颜色为黑色。*/
+            input[type=text]:focus{
+                border:3px solid #555;
+            }
+            input[type=submit]{
+                display: inline-block;
+                width: 100%;
+                margin:8px 0px;
+                background-color:#4CAF50 ;
+                padding: 15px;
+                border:none;
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;   /*??*/
+            }
+            input[type=submit]:hover{
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>使用CSS来渲染HTML的表单元素</h2>
+        <div class="div_form">
+            <form action="action_page.php" method="get">
+                <label for="fname">First Name</label>
+                <input  type="text" id="fname" name="firstname" placeholder="Your name.." size="20">
+               
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.." size="20">
+                
+                <label for="country">Country</label>
+               <select id="country" name="Country">
+                   <option value="australia">Australia</option>
+                   <option value="canada">Canada</option>
+                   <option value="usa">USA</option>
+               </select>
+               <input type="submit" value="Submit" />
+            </form>
+
+        </div>
+    </body>
+</html>

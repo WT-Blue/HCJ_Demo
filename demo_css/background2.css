@@ -1,0 +1,6 @@
+body{
+    background-image:url('D:/demo/images/pink_tree.png');
+    background-repeat: no-repeat;
+    /*设置固定的背景图像。图像不会随着页面的其他部分滚动*/
+    background-attachment: fixed;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>border</title>
+        <style>
+            p{
+                border-style: solid;
+            }
+            p.p1{
+                border-top: thick double red;
+            }
+            p.none{
+                border-bottom-style: none;
+            }
+            p.dotted{border-bottom-style:dotted;}
+            p.dashed {border-bottom-style:dashed;}
+            p.solid {border-bottom-style:solid;}
+            p.double {border-bottom-style:double;}
+            p.groove {border-bottom-style:groove;}
+            p.ridge {border-bottom-style:ridge;}
+            p.inset {border-bottom-style:inset;}
+            p.outset {border-bottom-style:outset;}
+            
+            p.p2{
+                border-left-color:green;
+                border-left-width:20px;
+            }
+
+            p.p3{
+                border-color: blue;
+            }
+            p.p4{
+                border-color:red blue;
+            }
+            p.p5{
+                border-color: red green blue;
+            }
+            p.p6{
+                border-color: red green blue purple;   /*顺序为顺时针，上右下左*/
+            }
+            /*
+            border-style：属性1，属性2，属性3，属性4
+            上->右->下->左
+
+            border-style：属性1，属性2，属性3
+            上->左右->下
+
+            border-style：属性1，属性2
+            上下->左右
+
+            border-style：属性1
+            上下左右属性相同
+            */
+        </style>
+    </head>
+    <body>
+        <p class="p1">段落中的一些文本。</p>
+        
+        <hr>
+        <p class="none">无底边界</p>
+        <p class="dotted">点低边界</p>
+        <p class="dashed">虚线底边界</p>
+        <p class="solid">实线底边界</p>
+        <p class="double">双线底边界</p>
+        <p class="groove">凹槽底边界</p>
+        <p class="ridge">垄状底边界。</p>
+        <p class="inset">嵌入底边界。</p>
+        <p class="outset">外凸底边界。</p>
+
+        <hr>
+        <p class="p2"><b>注意:</b>"border-left-width" 单独使用没有效果.要先使用 "border-style" 属性设置borders.</p>
+
+        <hr>
+        <p class="p3">One-colored border!</p>
+        <p class="p4">Two-colored border!</p>
+        <p class="p5">Three-colored border!</p>
+        <p class="p6">Four-colored border!</p>
+        <p><b>注意:</b> "border-color" 属性 如果单独使用则不起作用. 要先使用 "border-style" 属性来设置 borders .</p>
+    </body>
+</html>

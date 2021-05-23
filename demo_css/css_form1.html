@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css_form1</title>
+        <style>
+            input[type=text]{
+                padding: 14px 20px 14px 50px;
+                border:2px solid #ccc;
+                width: 130px;
+                box-sizing: border-box;
+                border-radius: 4px;
+                font-size: 16px;
+                background-color: white;
+                background-image: url("searchicon.PNG");
+                background-position: 10px 10px;
+                background-repeat: no-repeat;
+                /*使用了 CSS transition 属性，该属性设置了输入框在获取焦点时会向右延展*/
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
+            }
+            input[type=text]:focus{
+                width: 100%;
+            }
+            textarea{
+                width: 100%;
+                height: 150px;
+                padding:16px 20px;
+                box-sizing: border-box;
+                background-color:#f8f8f8 ;
+                border:2px solid #ccc;
+                font-size: 16px;
+                /*使用 resize 属性来禁用文本框可以重置大小的功能（一般拖动右下角可以重置大小）*/
+                resize: none;
+            }
+        </style>
+    </head>
+    <body>
+        <p>输入框按钮：</p>
+        <form action=".php" method="get">
+            <input type="text" id="search" name="search" placeholder="搜索.." />
+        </form>
+        <hr>
+        <p><b>提示:</b>使用 resize 属性来禁用文本框可以重置大小的功能（一般拖动右下脚可以重置大小）。</p>
+        <textarea>一些文本...</textarea>
+    </body>
+</html>

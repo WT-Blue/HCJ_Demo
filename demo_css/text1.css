@@ -1,0 +1,112 @@
+h1{
+    text-align: center;
+    /*文本转换属性text-transform是用来指定在一个文本中的大写和小写字母*/
+    text-transform: uppercase;
+    color:#A7C942;
+}
+P{
+    /*文本缩进属性text-indent是用来指定文本的第一行的缩进。*/
+    text-indent: 50px;
+    /*当text-align设置为"justify"，每一行被展开为宽度相等，左，右外边距是对齐（如杂志和报纸）*/
+    text-align: justify;
+    /*指定字符之间的空间*/
+    letter-spacing: 3px;
+}
+a{
+    /* text-decoration属性主要是用来删除链接的下划线*/
+    text-decoration: none;
+}
+h2{
+    text-decoration: overline;
+}
+h3{
+    text-decoration:line-through;
+}
+h4{
+    text-decoration: underline;
+}
+p.small{
+    line-height: 70%;
+}
+p.big{
+    line-height: 200%;
+}
+
+div.ex1{
+    /*设置元素的文本方向*/
+    direction: rtl;
+}
+
+p.spac{
+    /*增加单词之间的空白空间*/
+    word-spacing: 30px;
+}
+
+p.spac1{
+    /*规定段落中的文本不进行换行*/
+    white-space: nowrap;
+}
+
+h1.shadow{
+    /*添加文本阴影*/
+    text-shadow: 2px 2px #FF0000;
+}
+
+p.normal{font-style:normal;}
+p.italic{font-style: italic;}
+
+h1.h1size{
+    font-size: 2.5em; /* 40px/16=2.5em */
+}
+
+h2.h2size{
+    font-size: 1.875em; /* 30px/16=1.875em */
+}
+
+h3.h3size{
+    font-size: 0.875em; /* 14px/16=0.875em */
+}
+
+/*链接样式*/
+a:link{
+    color:#000000;
+    text-decoration: none; /*文本修饰*/
+    background-color: #B2FF99;
+}
+a:visited{
+    color:#00FF00;
+    text-decoration: none;
+    background-color:#FFFF85;
+}
+a:hover{
+    color:#FF00FF;
+    text-decoration: underline;
+    background-color:#FF704D;
+}
+a:active{
+    color:#0000FF;
+    text-decoration: underline;
+    background-color:#FF704D;
+}
+
+/*添加不同样式的超链接*/
+a.one:link{color:#ff0000;}
+a.one:visited{color:#0000ff;}
+a.one:hover{color:#ffcc00;}
+
+a.two:link{color:#ff0000;}
+a.two:visited{color:#0000ff;}
+a.two:hover{font-size:150%;}
+
+a.three:link{color:#ff0000;}
+a.three:visited{color: #0000ff;}
+a.three:hover{background:#66ff66;}
+
+a.four:link{color:#ff0000;}
+a.four:visited{color:#0000ff;}
+a.four:hover{font-family:Georgia,serif;}
+
+a.five:link{color:#ff0000;text-decoration:none;}
+a.five:visited{color:#0000ff;text-decoration: none;}
+a.five:hover{text-decoration: underline;}
+

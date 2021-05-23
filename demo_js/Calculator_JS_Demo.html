@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>简单计算器</title>
+    </head>
+    <style>
+        * {
+            border:none;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .center{
+            background-color: #fff;
+            border-radius: 50%;
+            height: 600px;
+            margin: auto;
+            width: 600px;
+        }
+        h1{
+            color:#495678;
+            font-size: 30px;
+            margin-top: 20px;
+            padding-top: 50px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+        }
+        form{
+            background-color: #495678;
+            box-shadow: 4px 4px #3d4a65;
+            margin: 40px auto;
+            padding:40px 0 30px 40px;
+            width: 280px;
+        }
+        .btn{
+            outline: none;
+            cursor: pointer;
+            font-size: 20px;
+            height: 45px;
+            width: 45px;
+            margin: 5px 0px 5px 10px;
+        }
+        .btn:first-child{
+            margin: 5px 0 5px 10px;
+        }
+        .btn,#text,form{
+            border-radius: 25px;
+        }
+        #text{
+            outline: none;
+            background-color: #98d1dc;
+            box-shadow:inset 6px 6px 0px #3facc0 ;
+            color: #dededc;
+            font-size: 20px;
+            height: 47px;
+            text-align: right;
+            width: 165px;
+            padding-right: 8px;
+            margin-left: 10px;
+        }
+        .number{
+            background-color: #72778b;
+            box-shadow:0 5px #5f6680 ;
+            color: #dededc;
+        }
+        .number:active{
+            box-shadow: 0 2px #5f6680;
+            transform: translateY(2px);
+            -webkit-transform: translateY(2px);
+  	        -ms-transform: translateY(2px);
+  	        -moz-tranform: translateY(2px);
+        }
+        .operator{
+            background-color: #dededc;
+	        box-shadow: 0 5px #bebebe;
+	        color: #72778b;
+        }
+        .operator:active{
+            box-shadow: 0 2px #bebebe;
+  	        -webkit-transform: translateY(2px);
+  	        -ms-transform: translateY(2px);
+  	        -moz-tranform: translateY(2px);
+  	        transform: translateY(2px);
+        }
+        .other {
+	        background-color: #e3844c;
+	        box-shadow: 0 5px #e76a3d;
+	        color: #dededc;
+        }
+        .other:active {
+	        box-shadow: 0 2px #e76a3d;
+  	        -webkit-transform: translateY(2px);
+  	        -ms-transform: translateY(2px);
+  	        -moz-tranform: translateY(2px);
+  	        transform: translateY(2px);
+        }
+    </style>
+    <body>
+        <div class="center">
+            <h1>简单计算器</h1>
+                <form name="calculator">
+                    <input type="button" class="btn other" value="C" onclick="cleartext()"/>
+                    <input type="text" id="text">
+                    <br/>
+                        <input type="button" class="btn number" value="7" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn number" value="8" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn number" value="9" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn operator" value=" + " onclick="getnumber(this.value)"/> <br/>
+                        <input type="button" class="btn number" value="4" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn number" value="5" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn number" value="6" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn operator" value=" - " onclick="getnumber(this.value)"/> <br/>
+                        <input type="button" class="btn number" value="1" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn number" value="2" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn number" value="3" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn operator" value=" * " onclick="getnumber(this.value)"/> <br/>
+                        <input type="button" class="btn number" value="0" onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn operator" value="." onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn operator" value=" / " onclick="getnumber(this.value)"/>
+                        <input type="button" class="btn other" value="=" onclick="count()"/> <br/>
+                    </div>
+                    
+                    
+                </form>
+                
+            </div>
+
+        </div>
+
+        <script>
+            // 获取按钮数字的值，并传输到文本
+            function getnumber(num){
+               var instext = document.getElementById('text');
+               instext.value += num ;
+            }
+            //清除文本内容
+            function cleartext(){
+                document.getElementById('text').value = "";
+            }
+
+            function count(){
+               /* var gettext = document.getElementById('text').value;   //获取文本的数据
+                //alert(gettext.split(" "));
+                var numb = new Array();    //创建数组
+                numb = gettext.split(" ");    //split() 方法用于把一个字符串分割成字符串数组,并赋值给numb数组,注意这里split(" ")指的是遇到空格就分割
+                //alert(numb[2]);
+                var result;
+
+                //加法
+               if(numb[1] == '+'){
+                    result = parseFloat(numb[0]) + parseFloat(numb[2]);
+                }
+
+                //减法
+                if(numb[1] == '-'){
+                    result = parseFloat(numb[0]) - parseFloat(numb[2]);
+                }
+
+                //乘法
+                if(numb[1] == '*'){
+                    result = parseFloat(numb[0]) * parseFloat(numb[2]);
+                }
+
+                //除法
+                if(numb[1] == '/'){
+                    result = parseFloat(numb[0]) / parseFloat(numb[2]);
+                }
+                document.getElementById('text').value = result;*/
+
+                var result = 0;
+	            result = document.getElementById("text").value;
+	            //document.getElementById("text").value = "";
+	            document.getElementById("text").value = eval(result);
+                
+            }
+            
+        </script>
+    </body>
+</html>

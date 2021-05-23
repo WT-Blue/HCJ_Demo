@@ -1,0 +1,18 @@
+body{
+    
+    background-image: url('1.jpg');
+    /*图像在水平方向平铺*/
+    background-repeat:no-repeat;
+    /*background-position:属性改变图像在背景中的位置;*/
+    background-position: right top;
+    /*background-color:#b0c4de;*/
+}
+#h11{
+    background-color:#6495ed;
+}
+div{
+    background-color: #b0c4de;
+}
+#p1{
+    background-color: #e0ffff;
+}
