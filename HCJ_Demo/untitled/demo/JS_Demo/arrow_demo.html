@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrow demo</title>
+</head>
+<body>
+  <h2>javascript 箭头函数</h2>
+  <p>箭头函数不需要使用function、return关键词及大括号{}。</p>
+  <p>IE11及更早IE版本不支持箭头函数</p>
+  <p id="demo"></p>
+
+  <hr>
+  <p>箭头函数可以自动调用</p>
+  <p id="demo1"></p>
+
+  <hr>
+  <p>查找最大的数</p>
+  <p id="demo2"></p>
+  <script>
+    const x = (x, y) => x * y;
+    document.getElementById('demo').innerHTML = x(5, 5);
+
+    //箭头函数自调用
+    ( () => {
+      document.getElementById('demo1').innerHTML = "Hello!我是自己调用的";
+    })()
+
+    //arguments对象
+    var y = findMax(1,123,500,115,44,88);
+
+    function findMax(){
+      var i,max = arguments[0];
+
+      if(arguments.length < 2) return max;
+
+      for(i = 0; i < arguments.length; i ++){
+        if(arguments[i] > max){
+          max = arguments[i];
+        }
+      }
+      return max;
+    }
+
+    document.getElementById('demo2').innerHTML = y;
+
+    //测试
+    var value = "ddd";
+    var obj = {
+      fun : function (){
+        console.log(this);
+      }
+    }
+    obj.fun.call(value);
+
+  </script>
+</body>
+</html>

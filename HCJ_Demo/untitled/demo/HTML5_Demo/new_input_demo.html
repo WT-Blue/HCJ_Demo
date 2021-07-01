@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new input demo</title>
+    <style>
+
+        body{
+            background-color: #333333;
+        }
+        #main{
+            position: absolute;
+            background-color: #777777;
+            border-radius: 20px;
+            width: 500px;
+            height: auto;
+            padding: 30px;
+            margin:auto;
+            top: 20px;
+            left: 0;
+            right: 0;
+            bottom: auto;
+            color: #f2f2f2;
+        }
+        input{
+            border-radius: 6px;
+            background-color: darkgoldenrod;
+            padding: 5px;
+            margin-bottom: 20px;
+
+        }
+        input[type = submit]{
+            background-color: darkolivegreen;
+            border-radius: 10px;
+            padding: 8px;
+            width: 80px;
+        }
+
+
+    </style>
+</head>
+<body>
+  <div id="main">
+
+
+  <form action="#">
+      <!--color类型用在input字段主要用于选取颜色-->
+    选择你最喜欢的颜色：<input type="color" name="favcolor" />
+    <input id="submit1" type="submit" /><br/>
+
+      <!--date类型允许你从一个日期选择器选择一个日期-->
+    生日：<input type="date" name="bday" />
+    <input id="submit2" type="submit"><br/>
+
+      <!--datetime-local类型允许选择一个日期和时间（无时区）-->
+    生日（日期和时间）：<input type="datetime-local" name="bdatetime"/>
+    <input type="submit" id="submit3"><br/>
+
+      <!--email类型用于应该包含e-mail地址的输入域，提交表单时，会自动验证email域的值是否合法邮箱有效-->
+    E-mail：<input type="email" name="email">
+    <input type="submit" id="submit4"><br/>
+
+      <!--month类型允许选择一个月份-->
+    生日（月和年）：<input type="month" name="bdaymonth"/>
+    <input type="submit" id="submit5"><br/>
+
+      <!--number类型用于应该包含数值的输入域-->
+    数量（1-5之间）：<input type="number" name="quantity" min="1" max="5">
+    <input type="submit" id="submit6"><br/>
+
+    输入0-10之间的3倍数：<input type="number" min="0" max="10" step="3" value="6">
+    <input type="submit" id="submit7"><br/>
+
+
+    <!--range类型用于应该包含一定范围内数字值的输入域，range类型显示为滑动条-->
+    Points:<input id="range1" type="range" name="points" min="1" max="10">
+    <input type="submit" id="submit8" onclick="alert(document.getElementById('range1').value);"><br/>
+
+    <!--search类型用于搜索域，比如站点搜索或Google搜索-->
+    Search Google:<input type="search" name="googlesearch">
+    <input type="submit" id="submit9"><br/>
+
+    <!--定义电话号码字段，目前看没啥意义，没有验证-->
+    电话号码：<input type="tel" name="usrtel">
+    <input type="submit" id="submit10"><br/>
+
+    <!--url类型用于应该包含URL地址的输入域，提交表单时，会自动验证URL域的值-->
+    添加您的主页：<input type="url" name="homepage">
+    <input type="submit" id="submit11"><br/>
+
+  </form>
+
+  </div>
+</body>
+</html>

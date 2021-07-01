@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video demo</title>
+    <style>
+        #video_div,#text_div{
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="video_div">
+        <video id="video1" width="420" controls>    //controls属性提供添加播放、暂停和音量等控件
+            <source src="mov_bbb.mp4" type="video/mp4">
+            您的浏览器不支持HTML5 video标签
+        </video>
+    </div>
+    <div id="text_div">
+        <button onclick="playPause()">播放/暂停</button>
+        <button onclick="makeBig()">放大</button>
+        <button onclick="makeSmall()">缩小</button>
+        <button onclick="makeNormal()">普通</button>
+    </div>
+
+    <script>
+        var myVideo = document.getElementById('video1');
+        function playPause(){
+            if(myVideo.paused){
+                myVideo.play();
+            }else{
+                myVideo.pause();
+            }
+        }
+        function makeBig(){
+            myVideo.width = 560;
+        }
+        function makeSmall(){
+            myVideo.width=320;
+        }
+        function makeNormal(){
+            myVideo.width = 420;
+        }
+    </script>
+</body>
+</html>

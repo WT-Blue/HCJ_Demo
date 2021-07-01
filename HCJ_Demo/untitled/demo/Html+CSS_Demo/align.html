@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align</title>
+  <style>
+    .center{
+      border: 3px solid green;
+      padding:10px;
+      width: 60%;
+      margin:auto;
+    }
+    .center1{
+      border:3px solid green;
+      text-align: center;
+    }
+    img{
+      display: block;
+      margin:0 auto;
+    }
+    .right{
+      border:3px solid green;
+      position: absolute;
+      right: 0px;
+      width: 300px;
+      padding:10px;
+    }
+    .margin{
+      margin-left: auto;
+      margin-right: auto;
+      width: 300px;
+      background-color: #b0e0e6;
+    }
+  </style>
+</head>
+<body>
+  <h2>元素居中对齐</h2>
+  <p>水平居中块级元素 (如 div), 可以使用 margin: auto;</p>
+  <div class="center">
+      <p><b>注意：</b>使用 margin:auto 无法兼容 IE8, 除非 !DOCTYPE 已经声明。</p>
+  </div>
+  <hr>
+  <h2>文本居中对齐</h2>
+  <div class="center1">
+    <p>文本居中对齐</p>
+  </div>
+
+  <hr>
+  <h2>图片居中对齐</h2>
+  <p>要让图片居中对齐, 可以使用 margin: auto; 并将它放到块元素中：</p>
+  <img src="1.jpg" alt="Paris" style="width: 40%">
+
+  <hr>
+  <div class="right">
+    <p>菜鸟教程--学的不仅是技术，更是梦想！</p>
+  </div>
+
+  <hr style="margin-top: 100px;">
+  <div class="margin">
+    <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p>
+    <p>菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p>
+  </div>
+</body>
+</html>

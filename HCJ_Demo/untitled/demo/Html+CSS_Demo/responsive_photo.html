@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>responsive photo</title>
+    <style>
+        div.img{
+            border: 1px solid #ccc;
+        }
+        div.img:hover{
+            border: 1px solid #777;
+        }
+        div.img img{
+            width: 100%;
+            height: auto;
+        }
+        div.desc{
+            text-align: center;
+            padding: 15px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .responsive{
+            padding: 0px 6px;
+            float: left;
+            width: 25%;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .responsive{
+                width: 50%;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px){
+            .responsive{
+                width: 100%;
+            }
+        }
+        .clearfix:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center">响应式图片相册</h2>
+    <div class="responsive">
+      <div class="img">
+          <a target="_blank" href="#">
+              <img src="img_fjords.jpeg" alt="fjords" width="300" height="200"/>
+          </a>
+          <div class="desc">
+              Add a description of the image here
+          </div>
+      </div>
+    </div>
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="#">
+                <img src="img_forest.jpeg" alt="forest" width="300" height="200"/>
+            </a>
+            <div class="desc">
+                Add a description of the image here
+            </div>
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="#">
+                <img src="img_lights.jpeg" alt="lights" width="300" height="200"/>
+            </a>
+            <div class="desc">
+                Add a description of the image here
+            </div>
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="img">
+            <a target="_blank" href="#">
+                <img src="img_mountains.jpeg" alt="mountains" width="300" height="200"/>
+            </a>
+            <div class="desc">
+                Add a description of the image here
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div style="padding: 6px;">
+        <h4>重置浏览器大小查看效果</h4>
+    </div>
+
+</body>
+</html>

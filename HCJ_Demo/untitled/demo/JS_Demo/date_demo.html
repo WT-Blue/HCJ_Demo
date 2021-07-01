@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date demo</title>
+    <link rel="stylesheet" type="text/css" href="exercises_css_demo.css">
+</head>
+<body onload="startTime()">
+  <div class="main">
+    <div class="display_txt">
+      <div class="get_txt">
+    <span>点击按钮获取今年的年份</span>
+    <button type="button" onclick="getYear()">点我</button>
+      </div>
+    <div class="insert_txt" id="year">
+      <span id="demo"></span>
+    </div>
+    </div>
+    <div class="display_txt">
+      <div class="get_txt">
+        <span>单击按钮显示1970年1月1号至今的毫秒数</span>
+        <button type="button" onclick="getTime()">点我</button>
+      </div>
+      <div class="insert_txt" id="time">
+        <span id="demo1"></span>
+      </div>
+    </div>
+    <div class="display_txt">
+      <div class="get_txt">
+        <span>单击按钮显示修改后的年月日</span>
+        <button type="button" onclick="setYear()">点我</button>
+      </div>
+      <div class="insert_txt" id="year1">
+        <span id="demo2"></span>   <!--JavaScript月数是从0至11。10是11月份-->
+      </div>
+    </div>
+    <div class="display_txt">
+      <div class="get_txt">
+        <span>单击按钮显示今天周几</span>
+        <button type="button" onclick="getmyDay()">点我</button>
+      </div>
+      <div class="insert_txt" id="day">
+        <span id="demo3"></span>
+      </div>
+    </div>
+    <div class="display_txt">
+      <div class="insert_txt" id="clock">
+        <span id="demo4"></span>
+      </div>
+    </div>
+    <div class="display_txt">
+      <div class="get_txt">
+        <span>两个日期比较</span>
+        <button type="button" onclick="compareDate()">点我</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementsByTagName()
+    function getYear(){
+      let getyear = new Date();
+      let x = document.getElementById('year');
+      x.style.display = 'inline-block';
+      document.getElementById('demo').innerHTML = getyear.getFullYear();
+    }
+    function getTime(){
+      let gettime = new Date();
+      document.getElementById('time').style.display = "inline-block";
+      document.getElementById('demo1').innerHTML =gettime.getTime();
+    }
+    function setYear(){
+      document.getElementById('year1').style.display = "inline-block";
+      let setyear = new Date();
+      setyear.setFullYear(2020,2,2);
+      document.getElementById('demo2').innerHTML = setyear;
+    }
+    function getmyDay(){
+      document.getElementById('day').style.display = "inline-block";
+      let d = new Date();
+      var weekday = new Array(7);
+      weekday[0] = "周日";
+      weekday[1] = "周一";
+      weekday[2] = "周二";
+      weekday[3] = "周三";
+      weekday[4] = "周四";
+      weekday[5] = "周五";
+      weekday[0] = "周六";
+      document.getElementById('demo3').innerHTML = weekday[d.getDay()];
+    }
+    function startTime(){
+      document.getElementById('clock').style.display = "inline-block";
+      let today = new Date();
+      let h = today.getHours();
+      let m = today.getMinutes();
+      let s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('demo4').innerHTML = h + ":" + m + ":" + s;
+      let t = setTimeout(function (){
+        startTime()
+      },500);
+    }
+    function checkTime(i){
+      if(i<0){
+        i = "0" + i;
+      }
+      return i;
+    }
+    function compareDate(){
+      let x = new Date();
+      let today = new Date();
+      x.setFullYear(2100,0,14);
+      if(x < today){
+        alert("今天是2100年1月14日之后");
+      }else{
+        alert("今天是2100年1月14日之前");
+      }
+    }
+  </script>
+</body>
+</html>

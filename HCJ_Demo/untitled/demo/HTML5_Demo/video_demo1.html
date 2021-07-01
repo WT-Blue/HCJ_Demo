@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video demo1</title>
+  <!--
+    https://careers.linecorp.com/ 学习网页布局和css
+  -->
+
+  <style>
+    body{
+      margin: 0;
+      color: #000;
+    }
+    @media only screen and (max-device-height: 540px) amd (orientation: landscape), only screen and (max-width: 828px)
+    .main_top{
+      min-height: 562px;
+    }
+    .main_top{
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+    }
+    div{
+      display: block;
+    }
+    .main_top .video_area {
+      overflow: hidden;
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    .main_top .video_area:before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+    }
+    .main_top .video_area:before{
+      z-index: 2;
+      height: 100%;
+      background-color: #000;
+      opacity: .3;
+    }
+    video{
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      transform:translateX(-50%) ;
+    }
+    .text_area{
+      z-index: 100;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      box-sizing: border-box;
+    }
+    .text{
+      font-weight: 900;
+      color: #fff;
+      font-family: LineSeed,system-ui,-SF Pro Text,Helvetica,Roboto,sans-serif;
+      font-size: 3.6rem;
+      line-height: 4.2rem;
+      letter-spacing: -.8px;
+    }
+    .text>span{
+      display: block;
+      animation: ani_main_top 1.2s;
+    }
+  </style>
+</head>
+<body>
+  <div class="main_top">
+  <div class="video_area">
+    <video autoplay muted loop playsinline>
+      <source src="e66fd48200d87fe12bada46e629d6cd9.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="text_area">
+    <p class="text">
+      <span>One step closer</span>
+      <span>tp a better future</span>
+    </p>
+  </div>
+  </div>
+</body>
+</html>

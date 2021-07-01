@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this demo</title>
+</head>
+<body>
+    <h1>JavaScript this 关键词</h1>
+
+    <p>实例中，this指向了person对象。</p>
+    <p>因为person对象是fullName方法的所有者。</p>
+    <p id="demo"></p>
+
+    <hr>
+    <h1>JavaScript <b>this</b> 关键词</h1>
+    <p>实例中，this指向了window对象：</p>
+    <p id="demo1"></p>
+
+    <hr>
+    <p>实例中this指向了person2,即便它是person1的方法：</p>
+    <p id="demo2"></p>
+
+    <hr>
+    <button type="button" onclick="this.style.display='none'">点我后我就消失了</button>
+
+
+    <script>
+        //创建一个对象
+        var person = {
+            firstName:"John",
+            laseName:"Die",
+            id  :5566,
+            fullName : function (){
+                return this.firstName + " " + this.laseName;
+            }
+        };
+
+        //显示对象的数据
+        document.getElementById('demo').innerHTML = person.fullName();
+
+        //单独使用this，则它指向全局（Global)对象
+        var x = this;
+        document.getElementById('demo1').innerHTML = x;
+
+        //显示函数绑定
+        var person1 = {
+            fullName:function (){
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        var person2 ={
+            firstName:"John",
+            lastName:'Doe',
+        }
+        var l = person1.fullName.call(person2);
+        document.getElementById('demo2').innerHTML = l;
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asynchronous demo</title>
+</head>
+<body>
+  <p>回调函数等待3秒后执行</p>
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <script>
+      setTimeout(function (){
+        document.getElementById('demo').innerHTML = "RUNOOB-1!";
+      },3000);
+      document.getElementById('demo1').innerHTML = "RUNOOB-2!";
+      console.log("2");
+
+      //promise类，可以更加优雅的书写复杂的异步任务，如下面的"计时器"
+      new Promise(function (resolve,reject){
+          setTimeout(function (){
+              console.log("First");
+              resolve();
+          },1000);
+      }).then(function (){
+          return new Promise(function (resolve, reject){
+              setTimeout(function (){
+                  console.log("Second");
+                  resolve();
+              },4000);
+          });
+      }).then(function (){
+          setTimeout(function (){
+              console.log("THird");
+          },3000);
+      });
+
+      //resolve和reject都是函数，其中调用resolve代表一切正常，reject是出现异常式所调用的：
+      new Promise(function (resolve, reject){
+          var a = 0;
+          var b = 0;
+          if(b==0) reject("Dicide zero");
+          else resolve(a / b);
+      }).then(function (value){
+          console.log("a / b = " + value);
+      }).catch(function (err){
+          console.log(err);
+      }).finally(function (){
+          console.log("End");
+      });
+
+      //resolve()中可以放置一个参数用于向一个then传递一个值，then中的函数也可以返回一个值传递给then.
+      //但是，如果then中返回的是一个Promise对象，那么下一个then将相当于对这个返回的Promise进行操作
+      //reject()参数中一般会传递一个异常给之后的catch函数用于处理异常
+      //两点注意：
+      //resolve和reject的作用域只有起始函数，不包括then以及其他序列
+      //resolve和reject并不能够使起始函数停止运行，别忘了return
+      new Promise(function (resolve, reject){
+          console.log(1111);
+          resolve(2222);
+      }).then(function (value){
+          console.log(value);
+          return 3333;
+      }).then(function (value){
+          console.log(value);
+          throw "An error";
+      }).catch(function (err){
+          console.log(err);
+      });
+
+      //上述的"计时器"程序看上去很长，可以将它的核心部分写成一个Promise函数：
+      function print(delay,message){
+          return new Promise(function (resolve, reject){
+              setTimeout(function (){
+                  console.log(message);
+                  resolve();
+              },delay);
+          });
+      }
+      //实现计时器程序功能,这种返回值为一个Promise对象的函数称作Promise函数，他常常用于开发基于异步操作的库
+      print(1000,"First").then(function (){
+          return print(4000,"Second");   //then块默认会向下👇顺序执行，return代表不能中断的
+          // 若想要在then块中断，可以通过throw来跳转至catch实现中断
+      }).then(function (){
+          print(3000,"Third");
+      });
+
+      //异步函数async function,将上面的代码变得更好看
+      async function asyncFunc(){
+          await print(1000,"First");
+          await print(4000,"Second");
+          await print(3000,"Third");
+      }
+      asyncFunc();
+
+      //异步函数async function，处理异常的机制将用try-catch块实现
+      async function asyncFunc1(){
+          try{
+              await new Promise(function (resolve, reject){
+                  throw "Some error";   //或者reject（"Some error")
+              });
+          }catch (err){
+              console.log(err);
+              //会输出Some error
+          }
+      }
+      asyncFunc1();
+
+      //如果Promise有一个正常的返回值，await语句也会返回它
+      async function asycnFunc2(){
+          let value = await new Promise(
+              function (resolve, reject){
+                  resolve("Return value");
+              });
+          console.log(value);
+      }
+      asycnFunc2();
+  </script>
+</body>
+</html>

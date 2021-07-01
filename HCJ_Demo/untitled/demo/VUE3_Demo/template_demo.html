@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template demo</title>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <div id="example" class="demo">
+    <p>Using mustaches:{{ rawHtml  }}</p>
+    <p>Using v-html directive : <span v-html="rawHtml"></span> </p>
+    <p v-if="seen">现在你可以看到我了</p>
+  </div>
+  <div id="computed-basics" class="demo">
+      <p>Has published books:</p>
+      <span>{{ publishedBooksMessage }}</span>
+
+  </div>
+  <script>
+    const RenderHtmlApp = {
+      data(){
+        seen = true;
+        return{
+          seen,
+          rawHtml:'<span style="color: red">This should be red.</span>'
+        }
+      }
+    }
+    Vue.createApp(RenderHtmlApp).mount('#example')
+
+    Vue.createApp({
+        data(){
+            return {
+                author : {
+                    name : 'John Doe',
+                    books :[
+                        'Vue 2 - Advanced Guide',
+                        'Vue 3 - Basic Guide',
+                        'Vue 4 - The Mystery'
+                    ]
+                }
+            }
+        },
+        computed:{
+            // 计算属性的getter
+            publishedBooksMessage(){
+                //this 指向vm实例
+                return this.author.books.length > 0 ? 'Yes' : 'No'
+            }
+        }
+    }).mount('#computed-basics')
+  </script>
+</body>
+</html>

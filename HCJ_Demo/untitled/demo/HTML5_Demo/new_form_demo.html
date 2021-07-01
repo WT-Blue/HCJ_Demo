@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new form demo</title>
+    <style>
+      body{
+        margin: 0;
+        background-color: #000;
+
+      }
+
+      .main{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+          transform:translate(-50%,-50%);
+        background-color: goldenrod;
+        width: 750px;
+        height: 220px;
+          border-radius: 20px;
+        opacity: .8;
+      }
+      .content{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 550px;
+      }
+      form{
+          text-align: center;
+      }
+      .brow_list,[type=number]{
+          border-radius: 10px;
+          background-color: #444444;
+          padding: 8px 15px;
+      }
+      [type=submit]{
+          padding: 6px 10px;
+          background-color: darkolivegreen;
+          border-radius: 10px;
+      }
+      .con1,.con2{
+        margin-bottom: 20px;
+      }
+      span{
+        background-color: darkolivegreen;
+        width: 20px;
+        padding: 10px;
+        margin: 0 10px;
+        border-radius: 10px;
+        opacity: .9;
+      }
+
+    </style>
+</head>
+<body>
+  <div class="main">
+  <div class="content">
+  <form action="#" method="get" oninput="x.value = parseInt(a.value) + parseInt(b.value)">
+    <div class="con1">
+      <input class="brow_list" list="browsers" name="browsers">
+      <datalist id="browsers">
+        <option value="Internet Explprer">
+        <option value="Firefox">
+        <option value="chrome">
+        <option value="opera">
+        <option value="safari">
+      </datalist>
+      <input type="submit">
+    </div>
+
+    <div class="con2">
+      <span>0</span><input type="range" id="a" value="50" min="10" max="100"><span>100&nbsp+</span>
+      <input type="number" id="b" value="50"><span>&nbsp=&nbsp</span>
+      <output name="x" for="a b"></output>
+    </div>
+
+  </form>
+  </div>
+  </div>
+</body>
+</html>

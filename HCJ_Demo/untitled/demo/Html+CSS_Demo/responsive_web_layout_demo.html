@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>responsive web layout demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body{
+      font-family: Arial;
+      padding: 10px;
+      background-color: #f1f1f1;
+    }
+    /*头部样式*/
+    div.header{
+      padding: 30px;
+      background-color: white;
+      text-align: center;
+    }
+    div.header h1{
+      font-size: 50px;
+    }
+    /*导航条*/
+    div.topnav{
+      background-color: #333333;
+      overflow: hidden;
+    }
+    /*导航链接样式*/
+    div.topnav a{
+      display: inline-block;
+      padding: 14px 16px;
+      text-align: center;
+      float: left;
+      text-decoration: none;
+      color: #f2f2f2;
+    }
+
+    /* 链接 - 修改颜色 */
+    div.topnav a:hover{
+      background-color: #dddddd;
+      color: #222222;
+    }
+    /* 创建两列 */
+    /*左边的列*/
+    div.leftcolumn{
+      float: left;
+      width: 75%;
+    }
+    /*右边的列*/
+    div.rightcolumn{
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+    }
+    /*创建图片*/
+    div.fakeimg{
+      width: 100%;
+      padding: 20px;
+      background-color: #aaaaaa;
+    }
+    /*创建卡片*/
+    div.card{
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* 列后面清除浮动 */
+    div.row:after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+    /* 底部 */
+    div.footer{
+      text-align: center;
+      background-color: #dddddd;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>我的网页</h1>
+    <p>重置浏览器大小查看效果。</p>
+  </div>
+
+  <div class="topnav">
+    <a href="#">链接</a>
+    <a href="#">链接</a>
+    <a href="#">链接</a>
+    <a href="#" style="float:right">链接</a>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>文章标题</h2>
+        <h4>2019年 4 月 17日</h4>
+        <div class="fakeimg" style="height: 200px">图片</div>
+        <p>一些文本...</p>
+        <p>菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程 - 学的不仅是技术，更是梦想！</p>
+      </div>
+      <div class="card">
+        <h2>文章标题</h2>
+        <h4>2019年 4 月 17日</h4>
+        <div class="fakeimg" style="height: 200px">图片</div>
+        <p>一些文本...</p>
+        <p>菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程 - 学的不仅是技术，更是梦想！菜鸟教程 - 学的不仅是技术，更是梦想！</p>
+      </div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <h2>关于我</h2>
+        <div class="fakeimg" style="height: 100px;">图片</div>
+        <p>关于我的一些信息..</p>
+      </div>
+      <div class="card">
+        <h3>热门文章</h3>
+        <div class="fakeimg"><p>图片</p></div>
+        <div class="fakeimg"><p>图片</p></div>
+        <div class="fakeimg"><p>图片</p></div>
+      </div>
+      <div class="card">
+        <h3>关注我</h3>
+        <p>一些文本...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>底部区域</h2>
+  </div>
+
+</body>
+</html>

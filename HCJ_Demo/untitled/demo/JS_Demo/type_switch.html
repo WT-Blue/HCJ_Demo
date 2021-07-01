@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS类型转换</title>
+</head>
+<body>
+  <p>constructor 属性返回变量或对象的构造函数。</p>
+  <p id="demo"></p>
+  <hr>
+  <p>判断是否为数组。</p>
+  <p id="demo1"></p>
+  <hr>
+  <p>判断是否为日期。</p>
+  <p id="demo2"></p>
+  <script>
+    document.getElementById('demo').innerHTML =
+            "john".constructor + "<br/>" +
+            (3.14).constructor + "<br/>" +
+            false.constructor + "<br/>" +
+            [1,2,3,4].constructor + "<br/>" +
+            {name:'john',age:34}.constructor + "<br/>" +
+            new Date().constructor + "<br/>" +
+            function () {}.constructor;
+
+    var fruits = ["banana","orange","apple"];
+    document.getElementById('demo1').innerHTML = isArray(fruits);
+    function isArray(myArray){
+      return myArray.constructor.toString().indexOf("Array") > -1;
+    }
+
+    var myDate = new Date();
+    document.getElementById('demo2').innerHTML = isDate(myDate);
+    function isDate(myDate){
+      return myDate.constructor.toString().indexOf("Date") > -1;
+    }
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript for...in 循环 demo</title>
+</head>
+<body>
+  <p>点击下面的按钮，循环遍历对象"person"的属性</p>
+  <button onclick="myFunction()">点击这里</button>
+  <p id="demo"></p>
+
+  <hr>
+  <p id="demo1"></p>
+
+  <script>
+      function myFunction(){
+          let person = {fname:"Bill",lname:"Gates",age:56};
+          let x,txt ="";
+          for (x in person){
+              txt += person[x];
+          }
+          //alert(txt);
+          document.getElementById('demo').innerHTML = txt;
+      }
+
+      //new demo
+      function person(firstname,lastname,age,eyecolor){
+          this.firstname = firstname;
+          this.lastname = lastname;
+          this.age = age;
+          this.eyecolor = eyecolor;
+          //return[this.firstname,this.lastname,this.age,this.eyecolor];
+      }
+      //使用prototype属性就可以给对象的额构造函数添加新的属性
+      person.prototype.nationality = "English";
+      //添加新的方法
+      person.prototype.name = function (){
+          return this.firstname + " " + this.lastname;
+      }
+      var myFather = new person("John","Doe",50,"blue");
+      document.getElementById("demo1").innerHTML = "我父亲的国籍是" + myFather.nationality +
+          "<br/>" + "我父亲的名字：" + myFather.name();
+
+      var myMither = person("Sally","Rally",48,"green");
+      console.log(myFather);     //this输出一个person对象
+      console.log(myMither);     //this输出window对象；
+
+  </script>
+</body>
+</html>

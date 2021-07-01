@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON demo</title>
+</head>
+<body>
+  <h1>为JSON字符串创建对象</h1>
+  <p id="demo"></p>
+
+  <hr>
+  <a href="javascript:void(0);">点我没有反应的！</a><br/>
+  <a href="#pos">点我定位到指定位置！</a>
+  <p style="margin-bottom: 2000px"></p>
+  <p id="pos">尾部定位点</p>
+  <script>
+    var text = '{ "sites" : [' + '{ "name" : "Runoob" , "url" : "www.runoob.com" },' +
+        '{ "name" : "Google" , "url" : "www.google.com" },' +
+        '{ "name" : "Taobao" , "url" : "www.taobao.com" } ]}';
+    var obj = JSON.parse(text);
+    document.getElementById('demo').innerHTML = obj.sites[1].name + " " + obj.sites[1].url;
+
+  </script>
+
+</body>
+</html>

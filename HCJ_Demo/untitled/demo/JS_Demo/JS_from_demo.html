@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS表单</title>
+</head>
+<body>
+  <form name="myForm" action="demo_from.php" onsubmit="return validateForm()" method="post">
+    名字：<input type="text" name="fname">
+    <input type="submit" value="提交">
+  </form>
+
+  <hr>
+  <h2>JavaScript 验证输入</h2>
+  <p>请输入 1 到 10 之间的数字：</p>
+  <input id="numb">
+  <input type="button" value="提交" onclick="testnumber()">
+  <p id="demo"></p>
+
+  <!--HTML 表单自动验证-->
+  <hr>
+  <form action="demo_form.php" method="post">
+    <input type="text" name="fname" required="required">
+    <input type="submit" value="提交">
+    <p>点击提交按钮，如果输入框是空的，浏览器会提示错误信息。</p>
+  </form>
+
+  <hr>
+  <form name="myForm1" action="demo_form.php" method="post" onsubmit="return testemail();">
+    Email:<input type="text" name="email">
+    <input type="submit" value="提交">
+  </form>
+
+  <script>
+
+    //JavaScript 表单验证
+    function validateForm(){
+      var x = document.forms['myForm']['fname'].value;
+      if(x == null || x == ""){
+        alert("需要输入名字。");
+        return false;
+      }
+    }
+
+    //JavaScript验证输入的数字
+    function testnumber(){
+     var num = document.getElementById('numb').value,text;
+     if(isNaN(num) || num < 1 || num > 10){
+        text = "输入错误";
+      }
+      else{
+        text = "输入正确";
+      }
+      document.getElementById('demo').innerHTML = text;
+    }
+
+    //E-mail 验证
+    function testemail(){
+      var x = document.forms['myForm1']['email'].value;
+      var atops = x.indexOf("@");
+      var dotops = x.lastIndexOf(".");
+      if(atops < 1 || dotops <atops+2 || dotops + 2>=x.length){
+        alert("不是一个有效的 e-mail 地址");
+        return false;
+
+      }
+    }
+  </script>
+</body>
+</html>

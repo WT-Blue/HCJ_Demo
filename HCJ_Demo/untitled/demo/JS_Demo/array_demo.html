@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array demo</title>
+    <link rel="stylesheet" type="text/css" href="exercises_css_demo.css">
+</head>
+<body>
+    <div class="main">
+        <div class="display_txt">
+            <div class="get_txt">
+                <span>合并两个数组-concat()</span>
+                <button type="button" onclick="myConcat()">点我</button>
+            </div>
+            <div class="insert_txt" id="myconcat">
+                <span id="demo"></span>
+            </div>
+        </div>
+        <div class="display_txt">
+            <div class="get_txt">
+                <span>用数组的元素组成字符串-join()，将数组作为字符串输出</span>
+                <button type="button" onclick="myJoin()">点我</button>
+            </div>
+            <div class="insert_txt" id="myjoin">
+                <span id="demo1"></span>
+            </div>
+        </div>
+        <div class="display_txt">
+            <div class="get_txt">
+                <span>数组的末尾删除/添加元素-pop()/push()</span>
+                <button type="button" onclick="myPush()">添加</button>
+                <button type="button" onclick="myPop()">删除</button>
+            </div>
+            <div class="insert_txt" id="mypop">
+                <span id="demo2"></span>
+            </div>
+        </div>
+        <div class="display_txt">
+            <div class="get_txt">
+                <span>将一个数组中的元素的顺序反转排序-reverse()</span>
+                <button type="button" onclick="myReverse()">反转</button>
+            </div>
+            <div class="insert_txt" id="myreverse">
+                <span id="demo3"></span>
+            </div>
+        </div>
+        <div class="display_txt">
+            <div class="get_txt">
+                <span>删除数组的第一个元素-shift()</span>
+                <button type="button" onclick="myShift()">删除</button>
+            </div>
+            <div class="insert_txt" id="myshift">
+                <span id="demo4"></span>
+            </div>
+        </div>
+        <div class="display_txt">
+            <div class="get_txt">
+                <span>从一个数组中选择元素-slice()，截取数组下标1到2的元素</span>
+                <button type="button" onclick="mySlice()">截取</button>
+            </div>
+            <div class="insert_txt" id="myslice">
+                <span id="demo5"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myConcat(){
+            document.getElementById('myconcat').style.display = "inline-block";
+            var hege = ["Cecilie","Lone"];
+            var stale = ["Emil","Tobias","Linus"];
+            let children = hege.concat(stale);
+            document.getElementById('demo').innerHTML = children;
+        }
+        let fruits = ["Banana","Orange","Lemon","Apple","Mango"];
+        function myJoin(){
+            document.getElementById('myjoin').style.display = "inline-block";
+            let txt_join = document.getElementById('demo1');
+            txt_join.innerHTML = fruits.join();
+        }
+        function myPop(){
+            document.getElementById('mypop').style.display = "inline-block";
+            let txt_pop = document.getElementById('demo2');
+            fruits.pop();
+            txt_pop.innerHTML = fruits;
+        }
+        function myPush(){
+            document.getElementById('mypop').style.display = "inline-block";
+            let txt_push = document.getElementById('demo2');
+            fruits.push("Kiwi");
+            txt_push.innerHTML = fruits;
+        }
+        function myReverse(){
+            document.getElementById('myreverse').style.display = "inline-block";
+            fruits.reverse();
+            let txt_reverse = document.getElementById('demo3');
+            txt_reverse.innerHTML = fruits;
+        }
+        function myShift(){
+            document.getElementById('myshift').style.display = "inline-block";
+            fruits.shift();
+            let txt_shift = document.getElementById('demo4');
+            txt_shift.innerHTML = fruits;
+        }
+        function mySlice(){
+            document.getElementById('myslice').style.display = "inline-block";
+            let txt_slice = document.getElementById('demo5');
+            let citrus = fruits.slice(1,3);
+            txt_slice.innerHTML = citrus;
+        }
+    </script>
+</body>
+</html>

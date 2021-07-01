@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html dom demo</title>
+</head>
+<body>
+
+<!--
+  <div id="div1">
+    <p id="p1">这是一个段落</p>
+    <p id="p2">这是另外一个段落</p>
+  </div>
+-->
+  <hr>
+    <div id="div2">
+  <h2>JavaScript HTML DOM</h2>
+  <p id="p3">Hello World!</p>
+  <p>Hello Runoob!</p>
+  <p id="demo"></p>
+    </div>
+  <script>
+   /* var para = document.createElement("p");
+    var node = document.createTextNode("这是一个新的段落");
+    para.appendChild(node);
+
+    //用于添加新元素到尾部
+    //document.getElementById("div1").appendChild(para);
+
+    //将新元素添加到开始位置
+   // var element = document.getElementById("div1");
+    //var child = document.getElementById("p1");
+   //element.insertBefore(para,child);
+
+   //移除已存在的元素
+    var child1 = document.getElementById("p2");
+    //element.removeChild(child1);
+
+    //替换元素
+    document.getElementById('div1').replaceChild(para,child1);
+
+    */
+
+   /*
+
+    //HTMLCollecion对象，获取文档所有的<p>元素
+   var x = document.getElementsByTagName("p");
+   alert(x);
+   document.getElementById('demo').innerHTML = "第二个段落内容为：<span style='color: red;'>" +
+       x[1].innerHTML + "</span>";
+
+   //HTMLCollecion对象，修改所有p元素的背景颜色
+   for(let i =0;i < x.length;i++){
+       x[i].style.backgroundColor = "red";
+   }
+
+   //测试移除元素，length属性的结果
+   var myD = document.getElementById("div2");   //获取父元素
+   var child = document.getElementById("p3");   //获取子元素p
+    myD.removeChild(child);
+
+    document.write(x.length);
+
+*/
+
+
+   //NodeList对象，选取文档中所有的<p>节点
+   var myNodeList = document.querySelectorAll("p");
+   alert(myNodeList);
+   document.getElementById('demo').innerHTML = "第二个段落的内容为：<span style='color: red;'>" +
+       myNodeList[1].innerHTML + "</span>"
+    //length属性常用语遍历节点列表
+   for(let i = 0;i < myNodeList.length; i++){
+       myNodeList[i].style.backgroundColor = "red";
+   }
+
+   //测试移除元素，length属性的结果
+   var myD = document.getElementById("div2");   //获取父元素
+   var child = document.getElementById("p3");   //获取子元素p
+   myD.removeChild(child);
+
+   document.write(myNodeList.length);
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>closure demo</title>
+</head>
+<body>
+  <p>局部变量计数</p>
+  <button onclick="myFunction()">计数！</button>
+  <p id="demo"></p>
+
+  <button onclick="fun()">计数！</button>
+  <p id="demo1"></p>
+  <script>
+    var rel;
+    var add = (function (){
+      var counter = 0;
+      rel = function (){
+        return counter += 1;
+      }
+      return rel;
+    })();
+    function myFunction(){
+      console.log("add === rel : " + (add === rel));
+      document.getElementById('demo').innerHTML = add();
+    }
+
+    //用了let关键词，下面的闭包感觉没有起到闭包的作用意义
+    {
+        let counter1 = 0;
+        function fun(){
+            document.getElementById('demo1').innerHTML = (counter1 += 1);
+            alert(counter1);
+        }
+
+    }
+  </script>
+</body>
+</html>
